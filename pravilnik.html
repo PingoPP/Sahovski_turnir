@@ -1,54 +1,441 @@
-# ŠAHOVSKA LIGA KAMNIK 2026/2027
 
-### 1. Splošna pravila in način igranja
 
-Šahovska liga Kamnik bo potekala na podlagi šahovskih dvobojev, ki jih bomo kot skupnost organizirali in časovno usklajevali glede na naša skupna srečanja.
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Igralo se bo po standardnih šahovskih pravilih, in sicer s časovno omejitvijo 15 ali 30 minut na igralca. Končni način igranja (15 ali 30 minut) bomo določili sporazumno med prijavljenimi tekmovalci. Tekmovanje bo potekalo po random sistemu.
+    <title>Šahovska liga Kamnik 2026/2027</title>
 
-Točkovanje bo naslednje:
-- Zmaga: 1 točka.
-- Remi: 0,5 točke.
-- Poraz: 0 točk.
+    <style>
+        /* OSNOVNE NASTAVITVE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Od tekmovalcev, ki se prijavijo v ligo, se pričakuje redna udeležba na dogovorjenih šahovskih srečanjih.
+        html {
+            scroll-behavior: smooth;
+        }
 
-V primeru upravičene odsotnosti zaradi drugih obveznosti, bolezni ali podobnih razlogov mora tekmovalec o svoji odsotnosti pravočasno obvestiti ostale člane v skupini Messenger, in sicer najmanj 12 ur pred začetkom posameznega srečanja. V primeru pravočasno opravičene odsotnosti se dvoboj med tekmovalcema prestavi na naslednje srečanje, na katerem sta oba tekmovalca prisotna. Za takšno odsotnost se tekmovalcu ne pripiše poraz.
+        body {
+            font-family: Georgia, serif;
+            background-color: #f4f1e8;
+            color: #252d27;
+            line-height: 1.8;
+        }
 
-Če tekmovalec odsotnosti ne opraviči pravočasno, njegov nasprotnik prejme avtomatično točko oziroma t.i. »free point«.
+        /* GLAVA */
+        header {
+            background-color: #193b2b;
+            color: #f4f1e8;
+            text-align: center;
+            padding: 75px 20px;
+            border-bottom: 5px solid #c5a45c;
+        }
 
-Končna razvrstitev tekmovalcev bo določena na podlagi skupnega števila zbranih točk.
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
 
-V primeru, da nas bo v lihi števili, torej igralec, ki bo počival, dobi točko, ampak se zraven označi s črko (P); zgled: 1(p).
+        header p {
+            color: #d6c9a5;
+            font-size: 1.1rem;
+        }
 
-V primeru enakega števila točk na koncu lige se za določitev končne razvrstitve predlaga dodatni odločilni dvoboj med izenačenimi tekmovalci.
+        .header-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
 
-### 2. Nagrade
+        /* NAVIGACIJA */
+        nav {
+            background-color: #10291e;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-Za najboljše tri tekmovalce so predvidene naslednje denarne nagrade:
+        nav a {
+            color: #f4f1e8;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
 
-- **1. mesto:** 50 €
-- **2. mesto:** 25 €
-- **3. mesto:** 10 €
+        nav a:hover {
+            color: #c5a45c;
+        }
 
-Vsi ostali udeleženci pa prejmejo neprecenljivo nagrado – objem v znak hvaležnosti za sodelovanje in športni duh.
+        /* GLAVNA VSEBINA */
+        main {
+            max-width: 1000px;
+            margin: 45px auto;
+            padding: 0 25px;
+        }
 
-### 3. Trajanje in lokacija tekmovanja
+        section {
+            background-color: #fffdf7;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #c5a45c;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
 
-Prvo srečanje oziroma poskusna izvedba šahovske lige je potekala 30. 10. 2026. Udeležili so se ga Blaž, Bernard, Krištof, Luka, Anton, Jaka in Žiga, nekoliko pozneje pa se nam je pridružil še ______.
+        h2 {
+            color: #193b2b;
+            margin-bottom: 22px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ded8c8;
+            font-size: 1.6rem;
+        }
 
-Simulacija se je izkazala za uspešno, saj smo srečanje zaključili vsi nasmejani in zadovoljni.
+        h3 {
+            color: #8b7138;
+            margin: 25px 0 12px;
+            font-size: 1.15rem;
+        }
 
-Uradni začetek lige bo določen na podlagi skupnega dogovora. Predvidene lokacije srečanj so samostan, pri Špenkotovih ali v Nevljah.
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
 
-Zaključek lige je predviden spomladi 2027, pred začetkom poletnih počitnic.
+        ul {
+            padding-left: 28px;
+            margin: 15px 0 20px;
+        }
 
-### 4. Namen in dolgoročna vizija
+        li {
+            margin-bottom: 8px;
+        }
 
-Šahovska liga Kamnik je bila ustanovljena predvsem z namenom druženja ljubiteljev šaha iz Kamnika in okolice ter spodbujanja zdravega tekmovalnega duha.
+        strong {
+            color: #193b2b;
+        }
 
-Če bo liga uspešno zaživela, si želimo v prihodnjih letih razširiti krog udeležencev ter k sodelovanju privabiti tako mlajše kot starejše ljubitelje šaha.
+        /* TOČKOVANJE */
+        .points {
+            background-color: #f4f1e8;
+            border-radius: 6px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
 
-Naš dolgoročni cilj je tudi ustanovitev šahovskega kluba v Kamniku, ki bi omogočal nadaljnji razvoj lokalne šahovske skupnosti v občini Kamnika.
+        /* NAGRADE */
+        .nagrade {
+            display: flex;
+            justify-content: space-around;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
 
-**Naj zmaga najboljši – predvsem pa naj se igra!**
+        .nagrada {
+            background-color: #193b2b;
+            color: #f4f1e8;
+            padding: 25px 20px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 170px;
+            text-align: center;
+        }
+
+        .nagrada h3 {
+            color: #d9bd75;
+            margin: 0 0 10px;
+        }
+
+        .nagrada strong {
+            color: #ffffff;
+            font-size: 2rem;
+        }
+
+        .objem {
+            background-color: #f4f1e8;
+            padding: 18px;
+            border-radius: 6px;
+            margin-top: 25px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ZAKLJUČNI CITAT */
+        .zakljucek {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #193b2b;
+            font-weight: bold;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        /* NOGA */
+        footer {
+            background-color: #10291e;
+            color: #d6c9a5;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 50px;
+        }
+
+        footer strong {
+            color: #c5a45c;
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        /* MOBILNI PRIKAZ */
+        @media (max-width: 650px) {
+            header {
+                padding: 50px 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            section {
+                padding: 22px;
+            }
+
+            .nagrade {
+                flex-direction: column;
+            }
+
+            .nagrada {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- GLAVA SPLETNE STRANI -->
+    <header>
+        <div class="header-icon">♟</div>
+
+        <h1>ŠAHOVSKA LIGA KAMNIK</h1>
+
+        <p>Tekmovalna sezona 2026/2027</p>
+    </header>
+
+    <!-- NAVIGACIJA -->
+    <nav>
+        <a href="#pravila">Pravila</a>
+        <a href="#nagrade">Nagrade</a>
+        <a href="#trajanje">Trajanje in lokacija</a>
+        <a href="#namen">O ligi</a>
+    </nav>
+
+    <!-- GLAVNA VSEBINA -->
+    <main>
+
+        <!-- 1. PRAVILA -->
+        <section id="pravila">
+
+            <h2>1. Splošna pravila in način igranja</h2>
+
+            <p>
+                Šahovska liga Kamnik bo potekala na podlagi šahovskih
+                dvobojev, ki jih bomo kot skupnost organizirali in
+                časovno usklajevali glede na naša skupna srečanja.
+            </p>
+
+            <p>
+                Igralo se bo po standardnih šahovskih pravilih, in sicer
+                s časovno omejitvijo 15 ali 30 minut na igralca.
+                Končni način igranja (15 ali 30 minut) bomo določili
+                sporazumno med prijavljenimi tekmovalci. Tekmovanje
+                bo potekalo po švicarskem sistemu.
+            </p>
+
+            <h3>Točkovanje</h3>
+
+            <div class="points">
+                <ul>
+                    <li><strong>Zmaga:</strong> 1 točka.</li>
+                    <li><strong>Remi:</strong> 0,5 točke.</li>
+                    <li><strong>Poraz:</strong> 0 točk.</li>
+                </ul>
+            </div>
+
+            <p>
+                Od tekmovalcev, ki se prijavijo v ligo, se pričakuje
+                redna udeležba na dogovorjenih šahovskih srečanjih.
+            </p>
+
+            <p>
+                V primeru upravičene odsotnosti zaradi drugih
+                obveznosti, bolezni ali podobnih razlogov mora
+                tekmovalec o svoji odsotnosti pravočasno obvestiti
+                ostale člane v skupini Messenger, in sicer najmanj
+                12 ur pred začetkom posameznega srečanja.
+            </p>
+
+            <p>
+                V primeru pravočasno opravičene odsotnosti se dvoboj
+                med tekmovalcema prestavi na naslednje srečanje,
+                na katerem sta oba tekmovalca prisotna.
+            </p>
+
+            <p>
+                Če tekmovalec odsotnosti ne opraviči pravočasno,
+                njegov nasprotnik prejme avtomatično točko oziroma
+                tako imenovano »free point«.
+            </p>
+
+            <p>
+                Končna razvrstitev tekmovalcev bo določena na podlagi
+                skupnega števila zbranih točk.
+            </p>
+
+            <p>
+                V primeru lihega števila tekmovalcev bo v posameznem
+                krogu eden izmed tekmovalcev prost. Tekmovalec,
+                ki počiva, prejme eno točko, pri čemer se takšna
+                točka v razpredelnici označi s črko P
+                (npr. 1 (P)).
+            </p>
+
+            <p>
+                V primeru, da pride do izenačenja v skupnem seštevku,
+                se predlaga dodaten odločilni dvoboj.
+            </p>
+
+        </section>
+
+
+        <!-- 2. NAGRADE -->
+        <section id="nagrade">
+
+            <h2>2. Nagrade</h2>
+
+            <p>
+                Za najboljše tri tekmovalce so predvidene naslednje
+                denarne nagrade:
+            </p>
+
+            <div class="nagrade">
+
+                <div class="nagrada">
+                    <h3>1. mesto</h3>
+                    <strong>50 €</strong>
+                </div>
+
+                <div class="nagrada">
+                    <h3>2. mesto</h3>
+                    <strong>25 €</strong>
+                </div>
+
+                <div class="nagrada">
+                    <h3>3. mesto</h3>
+                    <strong>10 €</strong>
+                </div>
+
+            </div>
+
+            <div class="objem">
+                Vsi ostali udeleženci pa prejmejo neprecenljivo
+                nagrado – objem v znak hvaležnosti za sodelovanje
+                in športni duh. 
+            </div>
+
+        </section>
+
+
+        <!-- 3. TRAJANJE IN LOKACIJA -->
+        <section id="trajanje">
+
+            <h2>3. Trajanje in lokacija tekmovanja</h2>
+
+            <p>
+                Prvo srečanje oziroma poskusna izvedba šahovske lige
+                je potekala 30. 10. 2026. Udeležili so se ga Blaž,
+                Bedvard, Krištof, Luka, Anton, Jaka in Žiga,
+                nekoliko pozneje pa se nam je pridružil še ______.
+            </p>
+
+            <p>
+                Poskusna izvedba se je izkazala za uspešno, saj smo
+                srečanje zaključili nasmejani in zadovoljni.
+            </p>
+
+            <p>
+                Uradni začetek lige bo določen na podlagi skupnega
+                dogovora. Predvidene lokacije srečanj so samostan,
+                pri Špenkotovih ali v Nevljah.
+            </p>
+
+            <p>
+                Zaključek lige je predviden spomladi 2027,
+                pred začetkom poletnih počitnic.
+            </p>
+
+        </section>
+
+
+        <!-- 4. NAMEN IN VIZIJA -->
+        <section id="namen">
+
+            <h2>4. Namen in dolgoročna vizija</h2>
+
+            <p>
+                Šahovska liga Kamnik je bila ustanovljena predvsem
+                z namenom druženja ljubiteljev šaha iz Kamnika in
+                okolice ter spodbujanja zdravega tekmovalnega duha.
+            </p>
+
+            <p>
+                Če bo liga uspešno zaživela, si želimo v prihodnjih
+                letih razširiti krog udeležencev ter k sodelovanju
+                privabiti tako mlajše kot starejše ljubitelje šaha.
+            </p>
+
+            <p>
+                Naš dolgoročni cilj je tudi ustanovitev šahovskega
+                kluba v Kamniku, ki bi omogočal nadaljnji razvoj
+                lokalne šahovske skupnosti v občini Kamnik.
+            </p>
+
+            <div class="zakljucek">
+                Naj zmaga najboljši – predvsem pa naj se igra! ♟
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- NOGA SPLETNE STRANI -->
+    <footer>
+
+        <p><strong>ŠAHOVSKA LIGA KAMNIK</strong></p>
+
+        <p>Tekmovalna sezona 2026/2027</p>
+
+        <p>Kamnik, Slovenija</p>
+
+    </footer>
+
+</body>
+</html>
+
+
